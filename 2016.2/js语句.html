@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js语句</title>
+</head>
+<body>
+ <script>
+       for(var i=0;i<10;i++){
+           if(i==5){
+               break;
+           }
+           document.write("i="+i+"<br/>");
+       }
+   </script>
+   <script> 
+      var i=9;
+	  if(i>10){//返回true
+	      document.write("我就喜欢i>10");   
+	  }else if(i<10){
+		  document.write("为什么i<10?");	  
+	  }else{
+		  document.write("i到底是多少，原来是10")
+		  }
+   </script>
+   <script>
+      var i=5;
+	  switch(i){
+		  case 1:
+		        document.write ("i=1");
+				break//跳出当前的循环
+		  case 2:
+		        document.write(i=2);
+				break;
+		  default:
+		        document.write("条件不满足case")
+				break;
+		  }
+   </script>
+   <br/>
+  <script>
+     var i=[1,2,3,4,5,6,];
+	 var j=0;
+	 for(;j<6;j++){
+		 document.write(i[j]+"、");
+		 }
+  </script>
+  <br/> 
+    <script>
+     var i=[1,2,3,4,5,6,];
+	 var j;
+	 for(j in i){//j是i中的元素
+		 document.write(i[j]+"<br/>")
+		 }
+  </script>
+  <script>
+     var i=1;
+	 while(i<10){
+		 document.write("i="+i+"<br/>");
+		 i++
+		 }
+  </script>
+</body>
+</html>

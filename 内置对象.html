@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>内置对象</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="startTime()">
+     <!--创建对象--->
+     <script>
+       //string对象
+      /*   people = new Object();//people是内置对象
+         people.name = "iwen";
+         people.age = "22";
+         document.write("name:"+people.name+",age:"+people.age);
+         people = {name:"iwen",age:"30"};
+         document.write("name:"+people.name+",age:"+people.age)
+
+       function people(name,age){
+           this.name=name;
+           this.age=age;
+       }
+         son = new people("iwen",22);//son是内置对象
+         document.write("name:"+son.name+",age:"+son.age)
+       */
+   //    var str = "Hello World";//str为内置对象
+     //  var str1="Hello,jike,xueyuan";
+//       document.write("字符串长度为："+str.length);
+ //     document.write(str.indexOf("Hello"));
+ //     document.write(str.match("World1"));
+  //      document.write(str.replace("World","jekexueyuan"));
+  //       document.write(str.toUpperCase())
+  //       var s = str1.split(",");
+  //       document.write(s[1])
+
+//         日期对象
+         var date = new Date();
+         document.write(date);
+         document.write(date.getFullYear());
+          document.write(date.getTime());
+         date.setFullYear(2015,1,14);
+         document.write(date);
+          function startTime(){
+               var today = new Date();
+               var h = today.getHours();
+               var m = today.getMinutes();
+               var s = today.getSeconds();
+               m = checkTime(m);
+               s = checkTime(s);
+               document.getElementById("timetxt").innerHTML = h + ":"+m+":"+s;
+               t = setTimeout(function(){
+                   startTime();
+               },1000);
+          }
+//       function checkTime(i){
+//                   if(i<10){
+//                       i = "0"+i;
+//                   }
+//                   return i;
+//               }
+
+    </script>
+    <!--<div id="timetxt"></div>-->
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>浏览器对象(history、location对象)</title>
+</head>
+<body>
+<!--<button id="btn" onclick="goceshi()">按钮</button>
+        <script>
+        function goceshi(){
+            history.back();
+        }
+</script>
+<form>
+    <input type="text" id="username">
+    <button id="btn" onclick="safe()">按钮</button>
+</form>
+<script>
+    function safe(){
+        var name = document.getElementById("username").value;
+        if(name=="hello"){
+            history.go(-1);
+        }else{
+            alert("输入错误")
+        }
+    }
+
+</script>-->
+<button id="btn" onclick="getLoc()">按钮</button>
+<p id="ptime"></p>
+<script>
+   function getLoc(){
+       document.getElementById("ptime").innerHTML = window.location.port;
+   }
+</script>
+</body>
+</html>

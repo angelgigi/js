@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dom操作HTML、css</title>
+   <style type="text/css">
+       .div{
+           width: 200px;
+           height: 200px;
+           background-color: red;
+       }
+   </style>
+</head>
+<body>
+    <p id="pid">Hello</p>
+    <button onclick="demo()">操作元素按钮</button>
+    <script>
+        function demo(){
+           var nv= document.getElementById("pid").innerHTML="World";
+           document.getElementsByTagName("p");//寻找相同元素的第一个
+        }
+    </script>
+    <br/>
+    <a id="aid" href="http://www.baidu.com">Hello</a>
+    <br>
+    <button onclick="demo1()">改变属性按钮</button>
+    <script>
+        function demo1(){
+            document.getElementById("aid").href="http://www.jikexueyuan.com";
+        }
+    </script>
+    <br/>
+   <!--dom操作css-->
+   <div id="div" class="div">
+      Hello
+   </div>
+   <button onclick="demo2()">操作css按钮</button>
+   <script>
+       function demo2(){
+           document.getElementById("div").style.backgroundColor="blue";
+       }
+   </script>
+   <br/>
+   <button id="btn">句柄按钮</button>
+   <script>
+       var x=document.getElementById("btn");
+       x.addEventListener("click",hello);
+       x.addEventListener("click",world);
+       x.removeEventListener("click",world);
+       function hello(){
+           alert("hello");
+       }
+       function world(){
+           alert("world");
+       }
+   </script>
+</body>
+</html>

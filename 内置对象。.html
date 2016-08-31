@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array数组对象、math对象、Window对象、计时器</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="myWin()">
+      <button id="btn" onclick="stopWin()">按钮</button>
+      <p id="ptime"></p>
+     <script>
+//         var a = ["hello","world"];
+//         var b = ["jike","xueyuan"];
+//         var c = a.concat(b);
+//         document.write(c);
+//       var a  = [5,3,2,4,1];
+//       document.write(a.sort(function(a,b){
+//           return b-a
+//       }))
+//         var a = ["a","b"];
+//              a.push("c")
+//         document.write(a);
+//         var a = ["c","a","b"];
+//         document.write(a.reverse());
+        //    document.write("宽度："+window.innerWidth+"高度："+window.innerHeight);
+//            function btnOnlick(){
+//                window.open("内置对象.html","windowname","height=200,width=300,top=100,left=100,menubar=no")//windowname 打开页面的名字
+//                window.close();
+//            }
+           var win;
+         function myWin(){
+             alert("Hello World")
+             win = setTimeout(function(){ myWin()},3000)//自己调用自己
+         }
+         function stopWin(){
+             clearTimeout(win);
+         }
+     </script>
+</body>
+</html>

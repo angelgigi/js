@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>函数的调用、变量</title>
+</head>
+<body>
+<script>
+    function demo(a,b){
+       var  sum=a+b;
+        alert(sum);
+    }
+    demo(10,20);
+    demo(100,200)
+</script>
+<br/>
+       <script>
+           function demo(name,age){
+               alert("Hello:"+name+",我的年龄是："+age);
+            }
+       </script>
+       <button onclick="demo('iwem',20)">按钮</button>
+       <button onclick="demo('kevin',22)">按钮</button>
+<script>
+    var n=10; m=10;//全局变量 任何地方都可以使用
+    function demo(){
+        var i=10;//局部变量    只能在当前函数中使用
+        x=20;//全局变量   任何地方都可以使用
+    }
+    alert(m);
+</script>
+</body>
+</html>

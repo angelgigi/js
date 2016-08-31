@@ -1,0 +1,36 @@
+  <!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>异常捕获</title>
+</head>
+<body>
+   <script>
+       var str="hello";
+      function demo(){
+          try{
+              alert(str);
+          }catch(err){ //err错误
+              alert(err);
+          }
+      }
+       demo();
+   </script>
+    <form>
+          <input id="txt" type="text">
+          <input id="btn" type="button" onclick="demo()" value="按钮">
+      </form>
+   <script>
+       function demo(){
+           try{
+               var e = document.getElementById("txt").value;//得到txt具体数据赋值给e
+               if(e==""){
+                   throw "第一个用户输入异常==空"; //自定义错误
+               }
+           }catch(err){
+               alert(err)
+           }
+       }
+  </script>
+</body>
+</html>
