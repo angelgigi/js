@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>函数的调用</title>
+    <script>
+        function demo() {
+           for(var i=100;i<999;i++){
+               var ge = parseInt(i % 10);
+               var shi = parseInt((i / 10) % 10);
+               var bai = parseInt(i / 100);
+               if (i==ge*ge*ge+shi*shi*shi+bai*bai*bai){
+                   document.getElementById('str').innerText += i+'；';
+               }
+           }
+        }
+    </script>
+</head>
+<body>
+ <!--  <script>
+       function demo(){
+           var a=10;
+           var b=20;
+           var sum=a+b;
+           alert(sum);
+       }
+      // demo()
+   </script>-->
+<button onclick="demo()">按钮</button>
+<label id="str"></label>
+</body>
+</html>

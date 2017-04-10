@@ -15,7 +15,14 @@
                  alert(ev.clientX + "," + ev.clientY)
              }
          }
-
+         window.onload=function () {
+             document.onclick = function (ev) {
+                 //FF
+                 alert(ev.clientX + "," + ev.clientY);
+                 //IE
+              //   alert(event.clientX + "," + event.clientY )
+             }
+         }
     </script>
 </body>
 </html>

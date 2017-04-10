@@ -35,6 +35,18 @@
           };
             oUser.value=getCookie('user')
         }
+
+
+        var test={
+            setCookie:function  setCookie (name,value,iDay) {
+                var oDate=new Date();
+                oDate.setDate(oDate.getDate()+iDay);
+                document.cookie=name+'='+value+';expires='+oDate;
+            },
+            oForm:document.getElementById("form1"),
+        }
+
+        test.oFormsetCookie()
     </script>
 </head>
 <body>

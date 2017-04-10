@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数调用</title>
+    <script>
+        //函数调用
+        var name = "zhangsan";//aa变量加载到了window对象上
+        function test(){
+            function test1(){
+                document.write(this.name);//zhangsan,this为window对象
+            }
+            test1();
+        }
+        test();
+
+        //二 ：方法调用
+        var myObj = {
+            value:0,
+            increment:function(val){
+                this.value += typeof val ==="number" ? val : 1;//this为myObj对象
+            }
+        };
+        myObj.increment();
+        document.write(myObj.value);//1
+        myObj.increment(2);
+        document.write(myObj.value);//3
+ //三：构造函数调用
+   /*     var quo=function(string){
+            this.status=string;
+        };
+        quo.prototype.get_status=function(){
+            return this.status;
+        };
+        var qq=new quo("aaa");
+        alert(qq.get_status());*/
+   //创建一个名为Quo的构造函数，它构造一个带有status属性的对象。
+   var Quo = function (str,name){
+       this.status = str;
+       this.name = name;
+   };
+   //给Quo的所有实例提供一个名为get_status的公共方法。
+   Quo.prototype.get_status = function(){
+       return this.status;//this能访问到status
+   };
+   Object.prototype.get_name = function(){
+       return this.name;//能访问到name
+   };
+   //构造一个Quo实例
+   var myQuo = new Quo("confused","zhangsan");
+   //confused,document.write()和document.writeln都是js向客户端写入的方法，writeln是以行方式输出的，但并不是指页面实际效果中的换行，即页面的实际效果是没有换行的。
+   document.writeln(myQuo.get_status());
+   document.write(myQuo.get_name());//zhangsan
+//四：间接调用 apply() 、call()
+   var myStatus = {
+       status:'A-OK'
+   };
+   //myStatus并没有继承自Ouo.prototype。但我们可以在myStatus上调用get_status方法，尽管myStatus并没有一个名为get_status的方法
+   var st = Quo.prototype.get_status.apply(myStatus);//A-OK
+   var st1 = myQuo.get_status.apply(myStatus);//A-OK
+    </script>
+</head>
+<body>
+
+</body>
+</html>
